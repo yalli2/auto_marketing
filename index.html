@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>다인에듀 뉴스레터 | 스페인어·영어 학습 편지</title>
+<meta name="description" content="스페인어·영어 학습 자료와 새 강좌 소식을 매주 이메일로 받아보세요. 다인에듀 뉴스레터 구독 신청.">
+<meta property="og:title" content="다인에듀 뉴스레터">
+<meta property="og:description" content="매주 한 통, 외국어가 가까워지는 편지">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F3F6F9;
+    --ink: #10243A;
+    --ink-soft: #4E6072;
+    --line: #CFD8E1;
+    --air-blue: #2B4FBF;
+    --air-red: #D8402F;
+    --white: #FFFFFF;
+    --display: "Hahmlet", "Noto Serif KR", serif;
+    --body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.75;
+    word-break: keep-all;
+  }
+  a { color: var(--air-blue); }
+  :focus-visible { outline: 3px solid var(--air-blue); outline-offset: 2px; }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  .top {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 22px 0; border-bottom: 1px solid var(--line);
+    font-size: 15px;
+  }
+  .brand { font-family: var(--display); font-weight: 700; font-size: 20px; color: var(--ink); text-decoration: none; }
+
+  .hero {
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 440px);
+    gap: 64px; align-items: start; padding: 64px 0 72px;
+  }
+  .greet { font-family: var(--display); font-weight: 500; font-size: 19px; color: var(--air-blue); margin: 0 0 18px; }
+  h1 {
+    font-family: var(--display); font-weight: 700;
+    font-size: clamp(36px, 5.4vw, 60px); line-height: 1.22; letter-spacing: -0.02em;
+    margin: 0 0 24px;
+  }
+  .lead { font-size: 19px; color: var(--ink-soft); max-width: 30em; margin: 0 0 40px; }
+
+  .inside { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); max-width: 34em; }
+  .inside li { padding: 16px 0; border-bottom: 1px solid var(--line); }
+  .inside b { display: block; font-weight: 600; }
+  .inside span { color: var(--ink-soft); font-size: 16px; }
+
+  /* 항공우편 봉투 테두리 — 이 페이지의 유일한 장식 */
+  .envelope {
+    padding: 10px;
+    background: repeating-linear-gradient(-45deg,
+      var(--air-red) 0 14px, var(--white) 14px 28px,
+      var(--air-blue) 28px 42px, var(--white) 42px 56px);
+    border-radius: 4px;
+  }
+  form { background: var(--white); padding: 30px 28px 28px; }
+  form h2 { font-family: var(--display); font-size: 24px; margin: 0 0 6px; }
+  .hint { font-size: 14px; color: var(--ink-soft); margin: 0 0 22px; }
+
+  label.field { display: block; font-size: 15px; font-weight: 500; margin: 0 0 16px; }
+  input[type="email"], input[type="text"] {
+    display: block; width: 100%; margin-top: 6px;
+    font: inherit; color: var(--ink);
+    padding: 12px 14px; border: 1.5px solid var(--ink); border-radius: 3px; background: var(--white);
+  }
+  input::placeholder { color: #8C9AA8; }
+
+  fieldset { border: 0; padding: 0; margin: 0 0 16px; }
+  legend { font-size: 15px; font-weight: 500; padding: 0; margin-bottom: 8px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chips label { position: relative; cursor: pointer; }
+  .chips input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+  .chips span {
+    display: block; padding: 7px 14px; font-size: 15px;
+    border: 1.5px solid var(--line); border-radius: 999px; background: var(--white);
+  }
+  .chips input:checked + span { background: var(--ink); border-color: var(--ink); color: var(--white); }
+  .chips input:focus-visible + span { outline: 3px solid var(--air-blue); outline-offset: 2px; }
+
+  .consents { border-top: 1px solid var(--line); margin-top: 20px; padding-top: 16px; }
+  .consent { display: grid; grid-template-columns: 22px 1fr; gap: 10px; font-size: 15px; margin-bottom: 10px; align-items: start; }
+  .consent input { width: 20px; height: 20px; margin: 4px 0 0; accent-color: var(--ink); }
+  details { font-size: 13.5px; color: var(--ink-soft); margin: 2px 0 0; }
+  summary { cursor: pointer; color: var(--air-blue); width: fit-content; }
+  details table { border-collapse: collapse; margin-top: 8px; width: 100%; }
+  details th, details td { border: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; font-weight: 400; }
+  details th { width: 5.5em; background: var(--paper); }
+
+  .trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+  button {
+    width: 100%; margin-top: 14px; padding: 15px;
+    font: inherit; font-weight: 600; font-size: 17px;
+    background: var(--ink); color: var(--white); border: 0; border-radius: 3px; cursor: pointer;
+  }
+  button:hover { background: #1B3A5C; }
+  button[disabled] { opacity: .55; cursor: default; }
+
+  .msg { margin: 14px 0 0; font-size: 15px; padding: 12px 14px; border-radius: 3px; display: none; }
+  .msg.show { display: block; }
+  .msg.err { background: #FDECEA; color: #8F1D12; }
+  .msg.ok { background: #E8EEFB; color: #173A9C; }
+  .done h2 { margin-bottom: 12px; }
+  .done p { margin: 0 0 10px; }
+
+  .more { border-top: 1px solid var(--line); padding: 56px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+  .more h2 { font-family: var(--display); font-size: 26px; line-height: 1.35; margin: 0 0 14px; }
+  .more p { color: var(--ink-soft); margin: 0 0 12px; max-width: 30em; }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0 48px; font-size: 13.5px; color: var(--ink-soft); line-height: 1.8; }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; gap: 40px; padding: 40px 0 56px; }
+    .more { grid-template-columns: 1fr; gap: 40px; padding: 44px 0; }
+    form { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" id="brandLink" href="https://www.dainedu.net">다인에듀</a>
+    <a id="siteLink" href="https://www.dainedu.net">홈페이지</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="greet">Hola, hello, 안녕하세요</p>
+        <h1>매주 한 통,<br>외국어가 가까워지는 편지</h1>
+        <p class="lead">스페인어와 영어 학습 자료, 새 강좌 소식을 이메일로 보내드립니다. 받아 보다가 필요 없어지면 클릭 한 번으로 끊을 수 있습니다.</p>
+        <ul class="inside">
+          <li><b>바로 써먹는 표현과 문법</b><span>수업에서 가장 많이 묻는 내용을 짧게 정리합니다.</span></li>
+          <li><b>스페인·중남미 소식으로 읽는 스페인어</b><span>이번 주 뉴스 한 토막을 원문과 함께 풀어 드립니다.</span></li>
+          <li><b>새 강좌와 무료 학습 사이트 안내</b><span>다인에듀가 새로 만든 온라인 강좌와 연습 사이트를 먼저 알려 드립니다.</span></li>
+        </ul>
+      </div>
+
+      <div class="envelope">
+        <form id="subForm" novalidate>
+          <div id="formBody">
+            <h2>뉴스레터 구독 신청</h2>
+            <p class="hint">신청 후 받은 확인 메일에서 버튼을 눌러야 구독이 완료됩니다.</p>
+
+            <label class="field">이메일 주소
+              <input type="email" name="email" autocomplete="email" placeholder="name@example.com" required>
+            </label>
+            <label class="field">이름 또는 닉네임 (선택)
+              <input type="text" name="name" autocomplete="name" maxlength="40">
+            </label>
+
+            <fieldset>
+              <legend>어떤 분이신가요?</legend>
+              <div class="chips">
+                <label><input type="radio" name="type" value="개인" checked><span>개인 학습자</span></label>
+                <label><input type="radio" name="type" value="기업·기관"><span>기업·기관 교육 담당자</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>관심 분야 (여러 개 선택 가능)</legend>
+              <div class="chips">
+                <label><input type="checkbox" name="interest" value="스페인어"><span>스페인어</span></label>
+                <label><input type="checkbox" name="interest" value="영어"><span>영어</span></label>
+                <label><input type="checkbox" name="interest" value="그 밖의 외국어"><span>그 밖의 외국어</span></label>
+                <label><input type="checkbox" name="interest" value="기업 출강·HR 교육"><span>기업 출강·HR 교육</span></label>
+              </div>
+            </fieldset>
+
+            <div class="trap" aria-hidden="true">
+              <label>이 칸은 비워 두세요 <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+            </div>
+
+            <div class="consents">
+              <div class="consent">
+                <input type="checkbox" id="age14" name="age14">
+                <label for="age14">만 14세 이상입니다. (필수)</label>
+              </div>
+              <div class="consent">
+                <input type="checkbox" id="cPrivacy" name="consent_privacy">
+                <div>
+                  <label for="cPrivacy">개인정보 수집·이용에 동의합니다. (필수)</label>
+                  <details>
+                    <summary>내용 보기</summary>
+                    <table>
+                      <tr><th>수집 항목</th><td>이메일 주소, 이름(선택), 구분, 관심 분야</td></tr>
+                      <tr><th>이용 목적</th><td>뉴스레터와 학습 자료, 강좌·교육 프로그램 안내 발송</td></tr>
+                      <tr><th>보유 기간</th><td>수신거부(동의 철회) 시까지. 수신거부 후에는 다시 발송되지 않도록 이메일 주소와 거부 일시만 보관합니다.</td></tr>
+                      <tr><th>보관 위치</th><td>Google 스프레드시트 및 Gmail (Google LLC 서비스)</td></tr>
+                    </table>
+                    동의하지 않으실 수 있으며, 이 경우 뉴스레터를 받으실 수 없습니다.
+                  </details>
+                </div>
+              </div>
+              <div class="consent">
+                <input type="checkbox" id="cMarketing" name="consent_marketing">
+                <div>
+                  <label for="cMarketing">광고성 정보(이메일) 수신에 동의합니다. (필수)</label>
+                  <details>
+                    <summary>내용 보기</summary>
+                    <span id="legalNameInline">다인에듀</span>가 보내는 뉴스레터에는 강좌·교육 프로그램 홍보 등 광고성 정보가 포함됩니다. 모든 메일 하단의 [수신거부]를 누르면 언제든지 무료로 수신을 중단할 수 있습니다.
+                  </details>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" id="submitBtn">구독 신청하기</button>
+            <p class="msg" id="msg" role="alert"></p>
+          </div>
+
+          <div class="done" id="done" hidden>
+            <h2>확인 메일을 보냈습니다</h2>
+            <p><b id="doneEmail"></b> 주소의 메일함을 열어 <b>구독 확인하기</b> 버튼을 눌러 주세요. 그래야 구독이 완료됩니다.</p>
+            <p class="hint">메일이 보이지 않으면 스팸함이나 프로모션함을 확인해 주세요.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="more">
+      <div>
+        <h2>편지를 쓰는 사람</h2>
+        <p>다인에듀 대표 후안샘(황부연)입니다. 도미니카공화국, 적도기니, 칠레의 현장에서 10년 가까이 스페인어로 일했고, 지금은 영어와 스페인어를 중심으로 온라인 강의와 출강 수업을 하고 있습니다.</p>
+        <p>교과서 문장보다 현장에서 실제로 통했던 말을 골라 보내드립니다.</p>
+      </div>
+      <div>
+        <h2>기업·기관 교육 담당자라면</h2>
+        <p>신청할 때 ‘기업·기관 교육 담당자’를 선택해 주세요. 임직원 외국어 출강과 성인 대상 교육 프로그램 안내를 따로 보내드립니다.</p>
+        <p>바로 상담이 필요하시면 <a id="consultLink" href="https://www.dainedu.net">홈페이지 상담문의</a>를 이용해 주세요.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span id="fLegal"></span><br>
+    <span id="fContact"></span>
+  </footer>
+</div>
+
+<script src="config.js"></script>
+<script>
+(function () {
+  var C = window.DAIN_CONFIG || {};
+  var $ = function (id) { return document.getElementById(id); };
+
+  // 사업자 정보 표시
+  if (C.SITE_URL) { $('brandLink').href = C.SITE_URL; $('siteLink').href = C.SITE_URL; $('consultLink').href = C.SITE_URL; }
+  if (C.LEGAL_NAME) { $('legalNameInline').textContent = C.LEGAL_NAME + '(다인에듀)'; }
+  $('fLegal').textContent = (C.LEGAL_NAME || '다인에듀') + (C.ADDRESS ? ' | ' + C.ADDRESS : '');
+  $('fContact').textContent = [C.CONTACT_PHONE ? '전화 ' + C.CONTACT_PHONE : '', C.CONTACT_EMAIL || ''].filter(Boolean).join(' | ');
+
+  var form = $('subForm'), msg = $('msg'), btn = $('submitBtn');
+
+  function show(text, kind) {
+    msg.textContent = text;
+    msg.className = 'msg show ' + (kind || 'err');
+  }
+
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var email = form.email.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { show('이메일 주소를 다시 확인해 주세요.'); form.email.focus(); return; }
+    if (!form.age14.checked || !form.consent_privacy.checked || !form.consent_marketing.checked) {
+      show('필수 동의 항목 세 가지를 모두 선택해 주세요.'); return;
+    }
+    if (!C.WEBAPP_URL) { show('아직 신청을 받을 준비가 되지 않았습니다. (관리자: config.js 의 WEBAPP_URL 을 입력하세요)'); return; }
+
+    var interests = Array.prototype.slice.call(form.querySelectorAll('input[name="interest"]:checked'))
+      .map(function (el) { return el.value; }).join(', ');
+    var data = new URLSearchParams({
+      email: email,
+      name: form.name.value.trim(),
+      type: form.type.value,
+      interests: interests,
+      age14: 'yes',
+      consent_privacy: 'yes',
+      consent_marketing: 'yes',
+      website: form.website.value,
+      source: (new URLSearchParams(location.search).get('utm_source') || document.referrer || 'direct').slice(0, 80)
+    });
+
+    btn.disabled = true; btn.textContent = '신청하는 중…'; msg.className = 'msg';
+    fetch(C.WEBAPP_URL, { method: 'POST', body: data })
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (res && res.ok) {
+          if (res.code === 'already') {
+            show('이미 구독 중인 주소입니다. 다음 편지를 기다려 주세요.', 'ok');
+            btn.disabled = false; btn.textContent = '구독 신청하기';
+            return;
+          }
+          $('doneEmail').textContent = email;
+          $('formBody').hidden = true; $('done').hidden = false;
+        } else {
+          show((res && res.message) || '신청을 처리하지 못했습니다. 잠시 후 다시 신청해 주세요.');
+          btn.disabled = false; btn.textContent = '구독 신청하기';
+        }
+      })
+      .catch(function () {
+        show('연결에 실패했습니다. 인터넷 상태를 확인한 뒤 다시 신청해 주세요.');
+        btn.disabled = false; btn.textContent = '구독 신청하기';
+      });
+  });
+})();
+</script>
+</body>
+</html>
