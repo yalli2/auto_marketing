@@ -14,6 +14,9 @@
  */
 
 const TZ = 'Asia/Seoul';
+// 스크립트를 시트의 [확장 프로그램 → Apps Script]가 아닌 곳에서 만들었다면
+// 시트 주소(…/spreadsheets/d/여기/edit)의 ID를 따옴표 안에 넣으세요.
+const SHEET_ID = '';
 const PER_RUN_CAP = 40; // 한 번 실행(1시간 간격)에 보내는 최대 통수
 const EMAIL_RE = /^[^\s@<>"',;]+@[^\s@<>"',;]+\.[^\s@<>"',;]{2,}$/;
 
@@ -407,7 +410,12 @@ function reconfirmConsents() {
 
 /* ====================== 7. 공통 도구 ====================== */
 
-function ss_() { return SpreadsheetApp.getActiveSpreadsheet(); }
+function ss_() {
+  if (SHEET_ID) return SpreadsheetApp.openById(SHEET_ID);
+  const active = SpreadsheetApp.getActiveSpreadsheet();
+  if (!active) throw new Error('연결된 시트가 없습니다. Code.gs 위쪽 SHEET_ID 에 시트 ID를 넣으세요.');
+  return active;
+}
 
 function table_(name) {
   const sh = ss_().getSheetByName(name);
