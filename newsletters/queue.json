@@ -1,3 +1,12 @@
 {
-  "campaigns": []
+  "campaigns": [
+    {
+      "id": "2026-11-17",
+      "send_date": "2026-11-17",
+      "subject": "건전지를 끼우라는 스페인어, 무슨 뜻일까요",
+      "preheader": "ponerse las pilas, get your act together, 그리고 콜린스가 고른 올해의 단어",
+      "file": "newsletters/2026-11-17.html",
+      "audience": "all"
+    }
+  ]
 }
